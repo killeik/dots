@@ -1,0 +1,40 @@
+#This is my simple sway config
+#I love it
+set $mod Mod4
+#First rule - no x11
+xwayland disable
+
+exec mako
+exec thunar --daemon
+
+
+output * bg /home/killeikk/Wallpapers/2.jpg fill
+
+    smart_gaps on
+    #hide_edge_borders --i3 both
+    #hide_edge_borders both
+    default_border pixel 2
+    smart_borders on
+    gaps inner 4
+
+
+    # Start a terminal
+    bindsym --to-code $mod+Return exec kitty
+
+    # Kill focused window
+    bindsym --to-code $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym --to-code $mod+d exec "bemenu-run --tf '#BBBBBB' --tb '#000000' --fb '#000000' --ff '#EEEEEE' --nb '#000000' --nf '##BBBBBB' --hb '#484848' --hf '#EEEEEE'  -p 'start >'"
+
+    # Reload the configuration file
+    bindsym --to-code $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    bindsym --to-code Print exec grimshot copy area
+
+
+
+include /home/killeikk/.config/sway/config.d/* 
