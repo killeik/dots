@@ -2,20 +2,34 @@
 #I love it
 set $mod Mod4
 #First rule - no x11
-xwayland disable
+    xwayland disable
+#Second rule - Split all config to small parts
+    include /home/killeikk/.config/sway/config.d/* 
+ 
+#Little bit of autostart
+    exec mako 
+    #notification deamon
+    exec pulseaudio
+    #better sounds
+    exec thunar --daemon
+    #filemanager deamon for automounting
+    exec autotiling
+    #script to splitting direction changes
 
-exec mako
-exec thunar --daemon
 
 
-output * bg /home/killeikk/Wallpapers/2.jpg fill
-
-    smart_gaps on
-    #hide_edge_borders --i3 both
-    #hide_edge_borders both
+#Customization
+    output * bg /home/killeikk/Wallpapers/2.jpg fill
+    #my wallpapers
     default_border pixel 2
     smart_borders on
+    #
     gaps inner 4
+    smart_gaps on
+    #
+  
+
+#Hotkeys
 
 
     # Start a terminal
@@ -24,17 +38,17 @@ output * bg /home/killeikk/Wallpapers/2.jpg fill
     # Kill focused window
     bindsym --to-code $mod+Shift+q kill
 
-    # Start your launcher
+    # Start bemenu with colors
     bindsym --to-code $mod+d exec "bemenu-run --tf '#BBBBBB' --tb '#000000' --fb '#000000' --ff '#EEEEEE' --nb '#000000' --nf '##BBBBBB' --hb '#484848' --hf '#EEEEEE'  -p 'start >'"
 
     # Reload the configuration file
     bindsym --to-code $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
+    # Exit sway
     bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
+    # Screenshot with grimshot
     bindsym --to-code Print exec grimshot copy area
 
 
 
-include /home/killeikk/.config/sway/config.d/* 

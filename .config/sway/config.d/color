@@ -1,31 +1,45 @@
+#Colors for windows
 
-set 	$background	#272827
-set 	$foreground	#657b83
-set 	$color0		#828282
-set  	$color1 	#cc6666
-set  	$color2 	#81a2be
-set  	$color3 	#f0c674
-set  	$color4 	#81a2be
-set  	$color5 	#b294bb
-set  	$color6		#8abeb7
-set 	$color7		#c5c8c6
-set 	$color8		#828282
-set 	$color9		#cc6666
-set 	$color10	#81a2be
-set 	$color11	#f0c674
-set 	$color12	#81a2be
-set 	$color13	#b294bb
-set 	$color14	#8abeb7
-set 	$color15	#c5c8c6
 
-# Theme colors
-# class                 border  	backgr. 	text    	indic.  	child_border
-# My colors
-client.background	$background
+#trying new colors
+## class                        border         backgr.         text    
+        indic.          child_border
+client.background                       n/a            #434c5e         n/a
+client.focused                                  #434c5e        #434c5e  
+       #eceff4         #434c5e         #434c5e+client.focused_inactive                 #3b4252        #3b4252         #eceff4         #3b4252         #3b4252
+client.unfocused                        #3b4252        #3b4252         #eceff4         #3b4252         #3b4252
+client.urgent                           #434c5e        #434c5e         #eceff4         #434c5e         #434c5e
+ 
 
-client.focused         	$foreground	$background	$foreground	$foreground		$foreground	
-client.unfocused       	$foreground	$background	$foreground	$color8		    $color8
-client.focused_inactive	$foreground	$background	$foreground	$color8			$color8
-client.urgent		    $foreground	$background	$foreground	$color8			$color8
-client.placeholder		$foreground	$background	$foreground	$color8			$color8
+
+
+#set 	$background	#272827
+#set 	$foreground	#657b83
+#set 	$color0		#828282
+#set  	$color1 	#cc6666
+#set  	$color2 	#81a2be
+#set  	$color3 	#f0c674
+#set  	$color4 	#81a2be
+#set  	$color5 	#b294bb
+#set  	$color6		#8abeb7
+#set 	$color7		#c5c8c6
+#set 	$color8		#828282
+#set 	$color9		#cc6666
+#set 	$color10	#81a2be
+#set 	$color11	#f0c674
+#set 	$color12	#81a2be
+#set 	$color13	#b294bb
+#set 	$color14	#8abeb7
+#set 	$color15	#c5c8c6
+
+## Theme colors
+## class                 border  	backgr. 	text    	indic.  	child_border
+## My colors
+#client.background	$background
+
+#client.focused         	$foreground	$background	$foreground	$foreground		$foreground	
+#client.unfocused       	$foreground	$background	$foreground	$color8		    $color8
+#client.focused_inactive	$foreground	$background	$foreground	$color8			$color8
+#client.urgent		    $foreground	$background	$foreground	$color8			$color8
+#client.placeholder		$foreground	$background	$foreground	$color8			$color8
 
