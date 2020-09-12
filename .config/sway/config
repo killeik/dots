@@ -1,36 +1,37 @@
 #This is my simple sway config
 #I love it
 set $mod Mod4
-#First rule - no x11
-    xwayland disable
-#Second rule - Split all config to small parts
-    include /home/killeikk/.config/sway/config.d/* 
+#Split all config to small parts
+    include /home/killeik/.config/sway/config.d/* 
  
 #Little bit of autostart
-    exec mako 
+    exec mako --background-color "#000000BB" --border-color "#434c5eBB" --border-radius 3 
     #notification deamon
-    exec pulseaudio
-    #better sounds
+    exec  pulseaudio --daemonize
+    #better sounds with pulseaudio
     exec thunar --daemon
     #filemanager deamon for automounting
     exec autotiling
     #script to splitting direction changes
-
-
+    exec keepassxc
+    #foss password manager
+    exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a bottom  --background-color "#00000000" --border-color "#88000000" 
+    #display volume/brightness percentage bar by wob
 
 #Customization
+
     output * bg /home/killeikk/Wallpapers/2.jpg fill
     #my wallpapers
+    
     default_border pixel 2
     smart_borders on
     #
     gaps inner 4
     smart_gaps on
     #
-  
+
 
 #Hotkeys
-
 
     # Start a terminal
     bindsym --to-code $mod+Return exec kitty
@@ -41,6 +42,8 @@ set $mod Mod4
     # Start bemenu with colors
     bindsym --to-code $mod+d exec "bemenu-run --tf '#BBBBBB' --tb '#000000' --fb '#000000' --ff '#EEEEEE' --nb '#000000' --nf '##BBBBBB' --hb '#484848' --hf '#EEEEEE'  -p 'start >'"
 
+    bindsym --to-code Menu exec "bemenu-run --tf '#BBBBBB' --tb '#000000' --fb '#000000' --ff '#EEEEEE' --nb '#000000' --nf '##BBBBBB' --hb '#484848' --hf '#EEEEEE'  -p 'start >'"
+
     # Reload the configuration file
     bindsym --to-code $mod+Shift+c reload
 
@@ -48,7 +51,19 @@ set $mod Mod4
     bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     # Screenshot with grimshot
-    bindsym --to-code Print exec grimshot copy area
+    bindsym --to-code Print exec grimshot --notify copy area
 
+
+#Control volume and backlight
+
+   #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +7% 
+   #bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -7%
+   
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob )   
+
+   bindsym XF86MonBrightnessUp exec light -A 7 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym XF86MonBrightnessDown exec light -U 7 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
 
