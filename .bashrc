@@ -8,7 +8,7 @@
 
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
-
+export PATH=/home/killeik/Scripts:$PATH
 
 alias cp='cp --reflink=auto --sparse=always'
 #This is CoW feature for BTRFS
