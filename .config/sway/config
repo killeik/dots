@@ -7,8 +7,14 @@ set $mod Mod4
 #Little bit of autostart
     exec mako --background-color "#000000BB" --border-color "#434c5eBB" --border-radius 3 
     #notification deamon
-    exec  pulseaudio --daemonize
+ 
+    #exec  pulseaudio --daemonize
     #better sounds with pulseaudio
+#    #I was wrong here
+#    #I thought I needed to run pulseaudio because it didn't start by itself
+#    #but the error was in the disabled service. 
+#    #I don't understand how this happened, but I have already fixed it
+
     exec thunar --daemon
     #filemanager deamon for automounting
     exec autotiling
