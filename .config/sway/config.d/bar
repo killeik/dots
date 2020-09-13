@@ -1,4 +1,4 @@
-#Swaybar with i3 config
+#Swaybar with i3blocks and color
 bar {
 
   status_command i3blocks

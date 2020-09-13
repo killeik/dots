@@ -1,6 +1,6 @@
 #Windows, containers, moving between them, etc.
 
-# Move your focus around
+#Move your focus around
     bindsym --to-code $mod+Left focus left
     bindsym --to-code $mod+Down focus down
     bindsym --to-code $mod+Up focus up
