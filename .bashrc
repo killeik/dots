@@ -8,6 +8,7 @@
 
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
+export MOZ_ENABLE_WAYLAND=1
 export PATH=/home/killeik/Scripts:$PATH
 
 alias cp='cp --reflink=auto --sparse=always'
