@@ -38,7 +38,14 @@ set $mod Mod4
     bindsym --to-code $mod+Shift+q kill
 
     # Start bemenu with colors
-    set $menu "bemenu-run --tf '#BBBBBB' --tb '#000000' --fb '#000000' --ff '#EEEEEE' --nb '#000000' --nf '##BBBBBB' --hb '#484848' --hf '#EEEEEE'  -p 'start >'"
+    #
+    #for_window [app_id="kitty-launcher"] floating enable, border pixel 10, sticky enable
+    #set $menu exec kitty --class "kitty-launcher" -e "sway-launcher-desktop"
+    
+    #set $menu "bemenu-run  --tf '#BBBBBB' --tb '#000000' --fb '#000000' --ff '#EEEEEE' --nb '#000000' --nf '##BBBBBB' --hb '#484848' --hf '#EEEEEE'  -p 'start >'"
+
+    set $menu "wofi --show run"
+
     bindsym --to-code $mod+d exec $menu
     bindsym --to-code Menu exec $menu 
 
