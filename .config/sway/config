@@ -3,8 +3,12 @@
 set $mod Mod4
 #Split all config to small parts
     include /home/killeik/.config/sway/config.d/* 
- 
+    #xwayland disable
+
 #Little bit of autostart
+
+    exec lxpolkit
+    #simple gtk3 polkit - lxsession
     exec mako --background-color "#000000BB" --border-color "#434c5eBB" --border-radius 3 
     #notification deamon
     exec thunar --daemon
