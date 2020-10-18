@@ -12,6 +12,7 @@
 
 #I have already added them to the system variables for wofi to work correctly
 
+source <(kitty + complete setup bash)
 
 alias cp='cp --reflink=auto --sparse=always'
 #CoW feature for BTRFS
